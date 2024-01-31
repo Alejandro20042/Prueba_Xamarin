@@ -1,0 +1,37 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prueba_Xamarin.Vistas.PaginaPrincipal">
+
+    <StackLayout>
+        <Label Text="Calculadora" HorizontalOptions="Center" FontSize="30"/>
+        <Label Text="Selecciona una opción:" FontSize="20" HorizontalOptions="Center"/>
+
+        <Grid>
+            <RadioButton x:Name="imcRadioButton" Grid.Column="0" Grid.Row="1" Content="IMC" />
+            <RadioButton x:Name="fcnRadioButton" Grid.Column="1" Grid.Row="1" Content="FCN" />
+        </Grid>
+
+        <!-- Campos para IMC -->
+        <StackLayout x:Name="imcStackLayout" IsVisible="false">
+            <Label Text="Peso" FontSize="20"/>
+            <Entry Placeholder="Ingresa tu peso" Text="{Binding Peso}"/>
+
+            <Label Text="Altura" FontSize="20"/>
+            <Entry Placeholder="Ingresa tu Altura" Text="{Binding Altura}"/>
+
+            <Button Text="Calcular" Command="{Binding ProcesoCalcularIMCcommand}"/>
+
+            <Label Text="Resultado:" FontSize="20"/>
+        </StackLayout>
+
+        <!-- Campos para FCN -->
+        <StackLayout x:Name="fcnStackLayout" IsVisible="true">
+            <Label Text="Número de Latidos en 15 Segundos" FontSize="18"/>
+            <Entry Placeholder="Ingresa los latidos" Keyboard="Numeric" />
+
+            <Label Text="Frecuencia Cardíaca Resultante:" FontSize="18" Margin="0,20,0,0"/>
+            <Label Text="Aqui el resultado a mostrar" FontSize="22" FontAttributes="Bold"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
